@@ -137,6 +137,7 @@ func validarNombreArchivo(fileName string) bool {
 		return true
 	case strings.HasSuffix(fileName, "scotiabank_wm_invitations_to_vm.csv"):
 		fmt.Println("Procesando scotiabank_wm_invitations_to_vm.csv")
+		firstLine := "Surveyid,Name,Client_Id,Client_Open_Date,Email,Investment_Specialist,Invitation_date,Reference_ID,Invitation_Date_EST,All_Segments,Assests_Under_Administration_Integer,Assets_Under_Administration_Bucket,Business_Phone,Client_City,Client_Street_Address,Client_Postal_Code,Client_Province,Country,Country_Description,Customer_Country,Investable_Asset_Tier,Risk_Tolerance,Share_of_Wallet_Bucket,Share_of_Wallet_Fraction,Age_Group,Customer_Branch,Customer_Branch_District_Id,Customer_Branch_District_Name,Customer_Branch_Id,Customer_Branch_Region_Id,Customer_Branch_Region_Name,Customer_ID,Customer_Preferred_Language,Development_Cycle,First_Name,Last_Name,Survey_Method,Survey_Type,Tenure,Branch_Banking_Region,Branch_Banking_Territory,Head,Head_ID,Investment_Specialist_Branch,Investment_Specialist_ID,Region,Region_ID,Survey_Status,Territory,Territory_ID"
 		csv := NewCSV(inputFilePath, outputFilePath, firstLine)
 		csv.TransformCSV()
 		return true
